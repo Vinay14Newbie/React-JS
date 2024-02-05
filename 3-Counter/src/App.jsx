@@ -6,15 +6,20 @@ function App() {
   let [counter, setCounter] = useState(5)
 
   const addValue = () => {
-    if(counter === 10) return
+    if(counter >= 10) return
     console.log('clicked', counter);
-    counter += 1
-    setCounter(counter)
+
+    // increases by 5 at once
+    setCounter(prevCounter => {return prevCounter+1})  //same as below
+    setCounter(prevCounter => prevCounter+1)
+    setCounter(prevCounter => prevCounter+1)
+    setCounter(prevCounter => prevCounter+1)
+    setCounter(prevCounter => prevCounter+1)
   }
 
   const subtractValue = () => {
     if(counter === 0) return
-    setCounter(counter-=1)
+    setCounter(counter-1)
   }
 
   return (
