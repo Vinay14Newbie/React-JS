@@ -4,8 +4,8 @@ import useCurrencyInfo from './custom_hooks/useCurrencyInfo'
 
 function App() {
 
-  const [amount, setAmount] = useState(0)
   const [from, setFrom] = useState('usd')
+  const [amount, setAmount] = useState(0)     
   const [to, setTo] = useState('inr')
   const [convertedAmount, setConvertedAmount] = useState(0);
 
@@ -21,7 +21,7 @@ function App() {
   }
 
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo[to])
+    setConvertedAmount((amount * currencyInfo[to]).toFixed(3))
   }
 
   return (
@@ -44,9 +44,9 @@ function App() {
                           label="From"
                           amount={amount}
                           currencyOptions={options}
-                          onCurrencyChange={(currency) => setAmount(amount)}
+                          onCurrencyChange={(currency) => setAmount(amount)}  // changing the currency in 'state' in App.jsx
                           selCurrency={from}
-                          onAmountChange={(amount) => setAmount(amount)}
+                          onAmountChange={(amount) => setAmount(amount)}  // changing value in 'state' in App.jsx
                       />
                   </div>
                   <div className="relative w-full h-0.5">

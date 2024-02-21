@@ -3,10 +3,10 @@ import React, {useId} from "react";
 function InputBox({
     label,   // from | to
     amount,  // total amount
-    onAmountChange, 
-    onCurrencyChange, 
     currencyOptions=[], 
+    onCurrencyChange,   //for changing state in App.jsx of 'setAmount'
     selCurrency="usd", 
+    onAmountChange, 
     amountDisable=false,  
     currencyDisable=false, 
     className = ""}) {
@@ -28,7 +28,7 @@ function InputBox({
                     placeholder="Amount"
                     disabled={amountDisable}
                     value={amount}
-                    onChange={(e)=>onAmountChange && onAmountChange(Number(e.target.value))}
+                    onChange={(e)=>onAmountChange && onAmountChange(Number(e.target.value))} // changing the amount in 'state' in App.jsx  ||  when we change the amount here it will reflect in App.jsx
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">
@@ -36,7 +36,7 @@ function InputBox({
                 <select
                     className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"  
                     value={selCurrency}
-                    onChange={(e)=>onCurrencyChange && onCurrencyChange(e.target.value)}
+                    onChange={(e)=>onCurrencyChange && onCurrencyChange(e.target.value)}  // changing the currency in 'state' in App.jsx
                     disabled={currencyDisable}
                 >
                        
