@@ -10,6 +10,8 @@ function MyApp(){
   )
 }
 
+
+// Wraps the JSX element in parentheses, which is a common practice to avoid automatic semicolon insertion issues.
 const anotherEle = (
   <a href="https://google.com" target='_blank'>Visit google</a>
 )
