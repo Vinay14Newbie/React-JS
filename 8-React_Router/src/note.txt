@@ -1,0 +1,60 @@
+-Link and Navlink are the two functionalities which we get through react-router-dom
+
+1) Link is a exchange of <a/> tag
+<a/> tag refresh the whole page, every time we click it, so we don't have to redraw page everytime so use Link
+-It is used to create hyperlink that navigate to diffrent routes defined in your application.
+-it doesn't apply any special styling or active state indication
+-the 'to' prop specifies the path to navigate to.
+-Basic navigation component. Use it when you don't need to style the active link.
+
+
+
+
+2) Navlink
+it provide a functionality 'isActive' by which we can write css according to it
+The 'Navlink' component is a special kind of 'Link' that can add styling attributes to the rendered element when it matches the current URL. This is useful for creating
+navigation menus where you want to indicate the active page.
+-navigation componentwith built-in support for active link styling. Use it when you want to indicate the currently active route to the user.
+
+
+
+
+
+-Route | RouterProvider | createBrowserRouter | createRoutesFromElements
+These are just tools provided by react route dom
+
+1) The 'route' component is used to define a route in your application. It specifies the path and the component that should be rendered when the URL matches that path.
+
+2) The 'RouterProvider' is a component that provides the routing context to your application. it is used to pass the router configuration to your application.
+
+3) 'createBrowserRouter' is a function that creates a router instance using the browser's history API. it allows you to define your routes and configure the router.
+
+4) 'createRoutesFromElements' is a function that creates route configuration objects from JSX elements. it is a convenient way to define routes directly using JSX.
+
+
+
+
+-Outlet
+The 'Outlet' component is used in a parent route component to render its child route components. when a nested route is matched, the 'Outlet' component will be replaced with the child component
+-A component used to render child routes in a parent route component.
+-Usage: Place the Outlet component in the parent route component where you want the child routes to be rendered
+-useful for creating layouts, dashboards, or any scenario where you need nested views.
+
+
+
+
+-useParams
+'useParams' is hook provided by react router dom that allows you to access the URL parameters of the current route. URL parameters are segments of the URL that can change and are used to pass Dynamic values
+
+
+
+
+-useLoaderData
+it is a hook provided by react router (especially, react router v6 and above) that allows you to access the data loaded by the route loader. It is useful for fetching data before a route is renered, ensuring that the component has the necessary data as soon as it mounts.
+
+
+
+
+-
+      <Route path='about/me' element={<Me/> } />
+path: /about/me

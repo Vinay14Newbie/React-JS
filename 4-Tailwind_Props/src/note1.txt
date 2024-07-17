@@ -1,0 +1,20 @@
+inside the fragment </> all tags should be closing tags
+Props make the components reusable
+'rfce' short hand, it bring functional component (react snippet requires)
+
+-As we receive props as an object and using this can increase our work
+Ex. function Card(props){
+        console.log(props.username);
+    }
+   so here we have to acces the value throught the object, so here object destructuring comes into picture, by writing it inside a {} we get short hand for that object
+{} it's destructuring see this : '\Javascript\2_Basics\4_objects2_de-structuring.js'
+As we know this is how the react parse the code...
+const reactElement = {
+    type: 'a', 
+    props: {
+        href: 'https://google.com',
+        target: '_blank'
+    },
+    children: 'Click me to visit google'
+}
+So here, attributes receives as an object which is 'props' so use destructuring :)

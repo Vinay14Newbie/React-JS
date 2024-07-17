@@ -1,0 +1,38 @@
+useCallback
+useCallback is a React Hook that lets you cache a function definition between re-renders
+it's useful for optimization purposes, especially when passing functions as props to child components. this can prevent unnecessary re-renders
+In react, when a component re-renderes, all the functions inside it are recreated. This isn't a problem most of the time, but if you pass these functions to child components as props, those children will also re-render even if they don't need to.
+'useCallback' helps to avoid this by making sure the same funciton is reused if certain values (dependencies) haven't changed.
+'useCallback' takes two arguments:
+1. The function you want to remember.
+2. A list of dependencies. If none of these dependencies change, React will reuse the same function
+
+Here is the example, onClick the handleClick function running multiple time so use useCallback to avoid re-rendering of that function
+---
+import React, {useCallback, useState} from "react";
+function Parent(){
+    const[count, setCount] = useState(0)
+    const handleClick = useCallback(()=>{
+        console.log('Button clicked');
+        console.log('vinay');
+    }, [])
+    return(
+        <>
+            <div className="text-white">
+                <Child onClick={handleClick}/>
+                <br />
+                <button onClick={()=>setCount(count+1)}>increment{count}</button>
+            </div>
+        </>
+    )
+}
+function Child({onClick}){
+    console.log('Child render');
+    return (
+        <>
+            <h1>Hey Vinay</h1>
+            <button onClick={onClick}>Child Button</button>
+        </>
+    )
+}
+export default Parent;

@@ -1,0 +1,8 @@
+-reactrouter.com
+-npm i react-router-dom
+
+About react router dom
+It is a routing library specifically designed for react applicattions. It helps in managing and rendering diffrent views(or components) depending on the URL path.
+-Single page applicattion SPA :- navigation between diffrent pages happens without reloading the entire page. react router dom enable this seamless navigation.
+-component based navigation :- It allows you to define routes and associate them with specific components that should be rendered when a route is accessed.
+-Dynamic routing :- supports Dynamic URLs and can match pattern to render appropriate components

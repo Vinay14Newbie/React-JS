@@ -1,0 +1,33 @@
+1)  Building context
+-Create a folder name context
+-call 'React.createContext()' and store it in a variable
+-export that variable
+
+2)  We have to make an provider to provide the data
+wrap all components in this provider like this:
+
+<UserContext.Provider>
+    {children}
+<UserContext.Provider/>
+
+now it is a parovider
+now UserContext is a global context and it has access of all the components
+
+3)  
+import context Provider
+Wrap that components as follow..
+<UserContextProvider>
+      <Login/>
+      <Profile/>
+</UserContextProvider>
+
+Now Login and Profile both components has the access from global context
+
+4)
+-in components when you want to use that hooks which are declared in Provider, first import 'UserContext' not 'Provider'
+-import a hook 'useContext'
+now you can access the global context by using simple code like this    
+const User = useContext(UserContext) 
+console.log(User); //{user: null, name: 'vinay', setUser: ƒ}
+OR
+const {user, setUser} = useContext(UserContext)

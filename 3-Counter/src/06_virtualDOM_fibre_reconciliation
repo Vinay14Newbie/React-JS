@@ -1,0 +1,26 @@
+createRoot()
+it create a DOM. And compare main DOM with DOM made by it. And it only update those things which are updated in the UI. While browser repaint the whole DOM and it is also called as page reload
+
+Read it   : 'react fibre architecture' on github 
+
+virtual DOM is updated by react fibre
+
+
+What is reconciliation?
+The algo React uses to differentiate one tree with another to determine which parts need to be changed
+Reconciliation is the algo behind what is popularly understood as the 'virtual DOM'
+
+The key points are :
+-Different component types are assumed to generate substntially different trees. React will not attempt to differ them, but rather replace the old tree completely.
+-Diffing of lists is performed using keys. Keys should b 'stable, predictable, and unique.'
+-In a UI, it's not necessary for every update to be applied immediately; in fact, doing so can be wasteful, causing frames to drop and degrading the user experience.
+-Different types of updates have diffrent priorities- an animation update needs to cmplete more quickly than, say, an update from a data store.
+-A push-based aproach requires the app (you, the programmer) to decide how to schedule work. A pull-based approach allows the framework(React) to be smart and make those decisions for you.
+
+
+
+Primary goal of fiber is to enable React to tae advantage like:
+-pause work and come back to it later
+-assign priority to different types of work
+-reuse previously completed work
+-abort work if it's no longer needed

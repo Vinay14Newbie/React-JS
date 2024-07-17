@@ -15,7 +15,8 @@ export default function Github(){
 //    }, [])
 
     return(
-        <div className="text-center m-4 bg-gray-500 text-white p-4 text-3xl">Github Followers: {data.followers}
+        <div className="text-center m-4 bg-gray-500 text-white p-4 text-3xl">
+            Github Followers: {data.followers ? data.followers : 0}
             <img src={data.avatar_url} alt="Git picture" width={300} />
         </div>
     )

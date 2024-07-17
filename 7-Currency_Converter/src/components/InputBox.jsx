@@ -28,6 +28,8 @@ function InputBox({
                     placeholder="Amount"
                     disabled={amountDisable}
                     value={amount}
+
+                    // sometimes js get value in string data type so first convert it into number just for surity
                     onChange={(e)=>onAmountChange && onAmountChange(Number(e.target.value))} // changing the amount in 'state' in App.jsx  ||  when we change the amount here it will reflect in App.jsx
                 />
             </div>
@@ -36,12 +38,16 @@ function InputBox({
                 <select
                     className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"  
                     value={selCurrency}
-                    onChange={(e)=>onCurrencyChange && onCurrencyChange(e.target.value)}  // changing the currency in 'state' in App.jsx
-                    disabled={currencyDisable}
-                >
+                    
+                    // if onCurrencyChange is defined then only call the onCurrencyChange : && operator ensures `onCurrencyChange` is defined before calling it 
+                    // onCurrencyChange is undefined it will not be executed | as we know undefined is false
+                    onChange={(e)=> onCurrencyChange && onCurrencyChange(e.target.value)}  // changing the currency in 'state' in App.jsx
+
+                    disabled={currencyDisable}>
                        
                     {currencyOptions.map((currency)=>(
-                        // remember the key in react 
+                        // always use key when writing code in jsx file, without it performance will be dead  : remember the key in react
+                        // while loopoing
                         <option key={currency} value={currency}>   
                             {currency}
                         </option>

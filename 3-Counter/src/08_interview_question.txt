@@ -1,0 +1,16 @@
+const [counter, setCounter] = useState(5)
+setCounter(counter+1)
+setCounter(counter+1)
+setCounter(counter+1)
+setCounter(counter+1)
+setCounter(counter+1)
+
+so what will be the output
+so it will only update one time means ans will be 6
+Heres why,
+When using React's 'usestae' hook, calling 'setState' functions (like setcounter) doesn't immediately update the state. Instead, React schedules these updates and applies them during the next render.This behaviour can lead to confusion when you call 'setCounter' multiple times in a row within the same function.
+Since all 'setCounter' calls happen within the same render, they all use the same 'counter' value of 5.
+
+Here's the correct way to increment the counter multiple times
+setCounter(prevCounter => prevCounter+1)
+it ensures that each update uses the most recent state value, allowing the counter to increment correctly

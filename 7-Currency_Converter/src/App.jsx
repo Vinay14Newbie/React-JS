@@ -4,14 +4,14 @@ import useCurrencyInfo from './custom_hooks/useCurrencyInfo'
 
 function App() {
 
-  const [from, setFrom] = useState('usd')
   const [amount, setAmount] = useState(0)     
+  const [from, setFrom] = useState('usd')
   const [to, setTo] = useState('inr')
   const [convertedAmount, setConvertedAmount] = useState(0);
 
   const currencyInfo = useCurrencyInfo(from)
 
-  const options = Object.keys(currencyInfo)
+  const options = Object.keys(currencyInfo)   //value inside options are in array form
 
   const swap = () => {
     setFrom(to)
@@ -44,7 +44,7 @@ function App() {
                           label="From"
                           amount={amount}
                           currencyOptions={options}
-                          onCurrencyChange={(currency) => setAmount(amount)}  // changing the currency in 'state' in App.jsx
+                          onCurrencyChange={(currency) => setFrom(currency)} // changing the currency in 'state' in App.jsx
                           selCurrency={from}
                           onAmountChange={(amount) => setAmount(amount)}  // changing value in 'state' in App.jsx
                       />
@@ -65,8 +65,8 @@ function App() {
                           currencyOptions={options}
                           onCurrencyChange={(currency) => setTo(currency)}
                           selCurrency={to}
-                          amountDisable
-                      />
+                          amountDisable  //if you're passsing any argument means it's true
+                      /> 
                   </div>
                   <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
                       Convert {from.toUpperCase()} to {to.toUpperCase()}

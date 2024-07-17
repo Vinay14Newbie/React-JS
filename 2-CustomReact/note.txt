@@ -1,0 +1,12 @@
+In this i have learn about, how react render the code or inject code in the html file using DOM
+
+1 - select the root from index file
+2 - write the code inside the react js
+3 - then it returns, but it actually inject the code using DOM in the HTML file, suppose we write some code in react js and return it, so it will follow the process given in the customRender() function
+
+
+Steps - 
+1) write code in react component, and it can show in the reactElement()
+2) render this code in root of html file for this it call customRender()
+3) inside it, it creats element of given data and information of html 
+** For all this react uses virtual DOM or reactDOM which is replica of the html DOM structure, which is stores in the memory, when the code is updated in the virtual DOM it compares it DOM with html DOM and inject the code  

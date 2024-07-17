@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 
 function About(){
     return (
@@ -26,6 +27,18 @@ function About(){
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <div className='block w-full text-center bg-orange-200 mt-7'>
+                <NavLink
+                    to="/about/me"
+                        className={({isActive}) =>
+                            `${isActive ? "text-purple-500" : "text-black"} inline-block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-green-800 lg:p-0 text-center text-2xl font-bold`
+                        }
+                    >
+                    Meet to Vinay...!
+                </NavLink>
+
             </div>
         </div>
     );

@@ -1,0 +1,8 @@
+-State management in React is a crucial concept that deals with how state is handled and shaed across components in a React application. State is the data that determines the behavior and rendering of components. Effective state management ensures that the application behaves predictably and efficiently.
+
+
+
+
+useContext
+useContext is a React hook that helps you read and subscribe to context from your component
+-It provides a way to share values (such as data or functions) across the component tree without having to pass props manually through each nested component.this is particularly useful for global state management, theming, and user authentication data.

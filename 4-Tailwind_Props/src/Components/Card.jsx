@@ -1,6 +1,12 @@
 import React from 'react';
 
-function Card({username, btnText="Visit me"}){   //here if btnText value not defined it will use "Visit me"
+function Card({username, btnText="Visit me"}){ //here if btnText value not defined it will use "Visit me"   
+// As we receive props as an object and using this can increase our work
+//Ex. function Card(props){
+  // console.log(props.username);
+  // so here we have to acces the value throught the object, so here object destructuring comes into picture, by writing it inside a {} we get short hand for that object
+// } 
+// {} it's destructuring see this : '\Javascript\2_Basics\4_objects2_de-structuring.js'
     console.log(username);
     return (
         <div className="mx-auto w-[300px] rounded-md border">

@@ -1,0 +1,19 @@
+useEffect
+useEffect is a React Hook that lets you synchronize a component with an external system.
+useEffect is a React Hook that lets you run side effects in your function components. Side effects are operations that affect something outside the component, such as data fetching, subscribing to services, or manually changing in the DOM
+In React, components re-render based on state and props changes. sometimes, you need to run extra code when these changes happen, like fetching data from an api or updating page title. useEffect allows you to do this.
+Never use useState() inside a useEffect it will become infinite loop
+
+Work:-
+-a function containing the side effect
+-an optinal array of dependencies that determines when the effect should run
+useEffect(()=>{},[])
+
+
+
+useRef
+useRef is used whenever we have to take reference of anything
+useRef is a React Hook that creates a mutable object which persists across re-renders. This object can hold any value, and its .current property is used to access or update the stored value
+need:-
+-storing a value that doesn't cause a re-render when changed (like a DOM element or a timer ID)
+-Accessing a DoM element directly

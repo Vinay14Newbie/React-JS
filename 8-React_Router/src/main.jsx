@@ -8,6 +8,7 @@ import Home from './components/Home/Home.jsx'
 import About from './components/about/About.jsx'
 import Contact from './components/contact/Contact.jsx'
 import User from './components/User/User.jsx'
+import Me from './components/vinay/Me.jsx'
 import Github, { githubInfoLoader } from './components/Github/Github.jsx'
 
 // const router = createBrowserRouter([
@@ -41,9 +42,20 @@ const router = createBrowserRouter(
       <Route index element={<Home/> } />  
       
       <Route path='about' element={<About/> } />
+      <Route path='about/me' element={<Me/> } />
+
+
+      {/* this is how we can also make nested route */}
+      {/* Keep in Mind whenever we have to build nested route, we have to make seperate 'Outlet' for it */}
+      {/* you need to use the '<Outlet/>' component in each parent route component | as at now 'About' is a parent route */}
+      {/* <Route path='about' element={<About/> } >
+        <Route path='me' element={<Me/> }/>
+      </Route> */}
+
+
       <Route path='contact' element={<Contact/> } />
       <Route
-        // 'loader' with it we can directly call the fetch the api | as instance like hovering on github 
+        // 'loader' with it we can directly start to fetch the api | as instance like hovering on github 
         // you can also fetch from here without any problem
         loader={githubInfoLoader}
         
