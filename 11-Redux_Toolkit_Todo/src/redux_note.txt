@@ -1,0 +1,11 @@
+-- npm i @reduxjs/toolkit
+-- npm i react-redux
+
+
+-redux is an state management library and it is an independant library it can be used in vue or angular also 
+-react-redux helps to use redux toolkit in the react 
+
+-store : in redux there is store where we can set the values globally
+-reducers : functionality of redux
+-useSelector
+-useDispatch

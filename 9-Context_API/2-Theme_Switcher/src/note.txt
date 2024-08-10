@@ -1,0 +1,4 @@
+context file 
+why i declared values in createContext() function
+
+To prevent errors if the context provider is not used properly. These default values act as placeholders and provide a clear structure for what the context will contain.

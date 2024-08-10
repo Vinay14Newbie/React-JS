@@ -4,7 +4,7 @@ import UserContext from "./UserContext";
 // children which is prop, use it as it is
 // it can be any component like card or dashboard or header or footer
 const UserContextProvider = ({children})=>{
-    const [user, setUser] = React.useState(null)
+    const [user, setUser] = React.useState({userName:"hitesh", password:"pass@112"}) //default values
 
     // const [customer, setCustomer] = React.useState('hitesh')
     
